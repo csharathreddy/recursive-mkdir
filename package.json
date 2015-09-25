@@ -1,6 +1,6 @@
 {
   "name": "recursive-mkdir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Recursive way of creating directories",
   "main": "app.js",
    "author":  "Sharathreddy <csharath@outlook.com>",

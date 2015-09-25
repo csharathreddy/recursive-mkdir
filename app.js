@@ -8,7 +8,7 @@ var recMkdirSync = function (directory) {
     var pathArray = directory.replace(/\/$/, '').split('/');
     var segment;
     for (var i = 1; i <= pathArray.length; i++) {
-        segment = path.slice(0, i).join('/');
+        segment = pathArray.slice(0, i).join('/');
         !fs.existsSync(segment) ? fs.mkdirSync(segment) : null;
     }
 };
@@ -17,13 +17,20 @@ var recMkdirSync = function (directory) {
 
 var recMkdirAsync = function (directory, cb) {
     var pathArray = directory.replace(/\/$/, '').split('/');
-    var segment;
+    var segment, aggPath = '/';
     _.each(pathArray, function (pathElement) {
         segment = path.join(pathElement, '/');
-        fs.exists(segment, function (exists) {
+        aggPath += segment;
+        fs.exists(aggPath, function (exists) {
+            console.log(exists);
             if (!exists) {
-                fs.mkdir(segment, function (ack) {
-                    // console.log("Directory created");
+                fs.mkdir(segment, function (err) {
+                    if (!err) {
+                        cb(err);
+                    }
+                    else {
+                        cb();
+                    }
                 });
             }
             else {
