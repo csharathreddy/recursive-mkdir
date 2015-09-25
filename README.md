@@ -1,13 +1,15 @@
 # recursive-mkdir
 Simple way of creating directories recursively
 
-# Installation
+### Installation
 npm install recursive-mkdir
 
-# Usage
+### Usage
+```javascript
 var recmkdir = require('recursive-mkdir');
-
-# Asynchronous
+```
+### Asynchronous
+```javascript
 var path = 'D:/out/in'
 recmkdir.recMkdirAsync(path, function (err) {
     if (err) {
@@ -17,12 +19,9 @@ recmkdir.recMkdirAsync(path, function (err) {
     	console.log("Directory created");
     }
 });
+```
 
-# Synchronous
+### Synchronous
+```javascript
 recmkdir.recMkdirSync(path);
-
-The above two function directory structure as follows
-
-D
-|_out
-	|_in
+```
