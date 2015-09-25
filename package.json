@@ -1,0 +1,15 @@
+{
+  "name": "recursive-mkdir",
+  "version": "1.0.0",
+  "description": "Recursive way of creating directories",
+  "main": "app.js",
+   "author":  "Sharathreddy <csharath@outlook.com>",
+    "keywords": [
+        "mkdir",
+        "recursive",
+        "directory"
+    ],
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
